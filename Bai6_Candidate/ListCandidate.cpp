@@ -1,6 +1,7 @@
 #include "ListCandidate.h"
 
-void ListCandidate::NhapDS() {
+void ListCandidate::NhapDS() 
+{
     int n;
     cout << "Nhap so luong thi sinh: ";
     cin >> n;
@@ -11,8 +12,8 @@ void ListCandidate::NhapDS() {
         ds[i].Nhap();
     }
 }
-
-void ListCandidate::XuatDSTongDiemLonHon15() const {
+void ListCandidate::XuatDSTongDiemLonHon15() const 
+{
     cout << "\nDanh sach thi sinh co tong diem > 15:\n";
     cout << left << setw(10) << "Ma"
         << setw(25) << "Ten"
@@ -22,22 +23,19 @@ void ListCandidate::XuatDSTongDiemLonHon15() const {
         << setw(8) << "Anh"
         << setw(10) << "Tong" << endl;
     cout << string(84, '-') << endl;
-
     for (const auto& ts : ds) {
         if (ts.TongDiem() > 15)
             ts.Xuat();
     }
 }
-
-void ListCandidate::ThiSinhDiemCaoNhat() const {
+void ListCandidate::ThiSinhDiemCaoNhat() const 
+{
     if (ds.empty()) return;
-
     float maxDiem = ds[0].TongDiem();
     for (size_t i = 1; i < ds.size(); ++i) {
         if (ds[i].TongDiem() > maxDiem)
             maxDiem = ds[i].TongDiem();
     }
-
     cout << "\nThi sinh co tong diem cao nhat:\n";
     cout << left << setw(10) << "Ma"
         << setw(25) << "Ten"
@@ -53,12 +51,11 @@ void ListCandidate::ThiSinhDiemCaoNhat() const {
             ts.Xuat();
     }
 }
-
-void ListCandidate::SapXepGiamDanTheoTongDiem() {
+void ListCandidate::SapXepGiamDanTheoTongDiem() 
+{
     sort(ds.begin(), ds.end(), [](const Candidate& a, const Candidate& b) {
         return a.TongDiem() > b.TongDiem();
         });
-
     cout << "\nDanh sach sau khi sap xep giam dan theo tong diem:\n";
     cout << left << setw(10) << "Ma"
         << setw(25) << "Ten"
@@ -68,7 +65,6 @@ void ListCandidate::SapXepGiamDanTheoTongDiem() {
         << setw(8) << "Anh"
         << setw(10) << "Tong" << endl;
     cout << string(84, '-') << endl;
-
     for (const auto& ts : ds) {
         ts.Xuat();
     }
