@@ -8,7 +8,6 @@ class Candidate {
 private:
     string ma, ten, ngaysinh;
     float toan, van, anh;
-    void ChuanHoaTen();
 public:
     Candidate();
     Candidate(string, string, string, float, float, float);
@@ -25,6 +24,7 @@ public:
     void SetDiemToan(float);
     void SetDiemVan(float);
     void SetDiemAnh(float);
+    void ChuanHoaTen();
     void Nhap();
     void Xuat() const;
     float TongDiem() const;
