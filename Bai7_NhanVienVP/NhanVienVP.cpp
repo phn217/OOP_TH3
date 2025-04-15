@@ -1,18 +1,5 @@
 #include "NhanVienVP.h"
 
-void NhanVienVP::ChuanHoaTen() {
-    bool viethoa = true;
-    for (char& x : hoten) {
-        if (viethoa && isalpha(x)) {
-            x = toupper(x);
-            viethoa = false;
-        }
-        else {
-            x = tolower(x);
-        }
-        if (x == ' ') viethoa = true;
-    }
-}
 NhanVienVP::NhanVienVP() 
 {
     ma = "";
@@ -27,6 +14,7 @@ NhanVienVP::NhanVienVP(string manv, string ten, string ns, double l)
     ngaysinh = ns;
     luong = l;
 }
+NhanVienVP::~NhanVienVP() {}
 string NhanVienVP::GetMaNV() const
 { 
     return ma; 
@@ -66,6 +54,19 @@ void NhanVienVP::SetNgaySinh(string ns)
 void NhanVienVP::SetLuong(double l) 
 { 
     luong = l; 
+}
+void NhanVienVP::ChuanHoaTen() {
+    bool viethoa = true;
+    for (char& x : hoten) {
+        if (viethoa && isalpha(x)) {
+            x = toupper(x);
+            viethoa = false;
+        }
+        else {
+            x = tolower(x);
+        }
+        if (x == ' ') viethoa = true;
+    }
 }
 void NhanVienVP::Nhap() 
 {
