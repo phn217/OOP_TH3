@@ -14,7 +14,7 @@ public:
     void TimLuongCaoNhat() const;
     void TimTuoiCaoNhat() const;
     void TinhTongLuong() const;
-    void SapXepTheoLuong();
+    void SapXepTheoLuongTangDan();
 };
 
 
