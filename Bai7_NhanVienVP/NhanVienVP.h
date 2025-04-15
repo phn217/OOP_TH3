@@ -11,7 +11,6 @@ protected:
     string hoten;
     string ngaysinh;
     double luong;
-    void ChuanHoaTen();
 public:
     NhanVienVP();
     NhanVienVP(string, string, string, double);
@@ -24,6 +23,7 @@ public:
     void SetHoTen(string);
     void SetNgaySinh(string);
     void SetLuong(double);
+    void ChuanHoaTen();
     void Nhap();
     void Xuat() const;
 };
