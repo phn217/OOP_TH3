@@ -1,18 +1,5 @@
 #include "Candidate.h"
 
-void Candidate::ChuanHoaTen() {
-    bool viethoa = true;
-    for (char& c : ten) {
-        if (viethoa && isalpha(c)) {
-            c = toupper(c);
-            viethoa = false;
-        }
-        else {
-            c = tolower(c);
-        }
-        if (c == ' ') viethoa = true;
-    }
-}
 Candidate::Candidate()
 {
     ma = "";
@@ -80,7 +67,22 @@ void Candidate::SetDiemAnh(float diemanh)
 {
     anh = diemanh;
 }
-void Candidate::Nhap() {
+void Candidate::ChuanHoaTen() 
+{
+    bool viethoa = true;
+    for (char& c : ten) {
+        if (viethoa && isalpha(c)) {
+            c = toupper(c);
+            viethoa = false;
+        }
+        else {
+            c = tolower(c);
+        }
+        if (c == ' ') viethoa = true;
+    }
+}
+void Candidate::Nhap() 
+{
     cout << "Ma thi sinh: ";
     getline(cin, ma);
     cout << "Ho ten: ";
@@ -96,7 +98,8 @@ void Candidate::Nhap() {
     cin >> anh;
     cin.ignore(); 
 }
-void Candidate::Xuat() const {
+void Candidate::Xuat() const 
+{
     cout << left << setw(10) << ma
         << setw(25) << ten
         << setw(15) << ngaysinh
@@ -105,9 +108,11 @@ void Candidate::Xuat() const {
         << setw(8) << anh
         << setw(10) << TongDiem() << endl;
 }
-float Candidate::TongDiem() const {
+float Candidate::TongDiem() const 
+{
     return toan + van + anh;
 }
-string Candidate::GetTen() const {
+string Candidate::GetTen() const 
+{
     return ten;
 }
