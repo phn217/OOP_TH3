@@ -1,8 +1,8 @@
 #include "Array.h"
 
 Array::Array() {}
-
-void Array::TaoMangNgauNhien() {
+void Array::TaoMangNgauNhien() 
+{
     int n;
     cout << "Nhap so luong phan tu trong mang: ";
     cin >> n;
@@ -12,8 +12,8 @@ void Array::TaoMangNgauNhien() {
         arr[i] = rand() % 100;
     }
 }
-
-void Array::Xuat() {
+void Array::Xuat() 
+{
     if (arr.empty())
         cout << "Mang rong\n";
     else
@@ -23,8 +23,8 @@ void Array::Xuat() {
         }
     cout << endl;
 }
-
-int Array::Dem(int x) {
+int Array::Dem(int x) 
+{
     int count = 0;
     for (int num : arr) {
         if (num == x) {
@@ -33,8 +33,8 @@ int Array::Dem(int x) {
     }
     return count;
 }
-
-bool Array::KiemTraTangDan() {
+bool Array::KiemTraTangDan() 
+{
     for (size_t i = 1; i < arr.size(); i++) {
         if (arr[i] < arr[i - 1]) {
             return false;
@@ -42,8 +42,8 @@ bool Array::KiemTraTangDan() {
     }
     return true;
 }
-
-int Array::TimPhanLeNhoNhat() {
+int Array::TimPhanLeNhoNhat() 
+{
     int minOdd = INT_MAX;
     for (int num : arr) {
         if (num % 2 != 0 && num < minOdd) {
@@ -52,16 +52,16 @@ int Array::TimPhanLeNhoNhat() {
     }
     return minOdd == INT_MAX ? -1 : minOdd;
 }
-
-bool Array::LaSoNguyenTo(int n) {
+bool Array::LaSoNguyenTo(int n) 
+{
     if (n < 2) return false;
     for (int i = 2; i * i <= n; i++) {
         if (n % i == 0) return false;
     }
     return true;
 }
-
-int Array::TimSoNguyenToLonNhat() {
+int Array::TimSoNguyenToLonNhat() 
+{
     int maxPrime = -1;
     for (int num : arr) {
         if (LaSoNguyenTo(num) && num > maxPrime) {
@@ -70,11 +70,11 @@ int Array::TimSoNguyenToLonNhat() {
     }
     return maxPrime;
 }
-
-void Array::SapXepTangDan() {
+void Array::SapXepTangDan() 
+{
     sort(arr.begin(), arr.end());
 }
-
-void Array::SapXepGiamDan() {
+void Array::SapXepGiamDan() 
+{
     sort(arr.rbegin(), arr.rend());
 }
