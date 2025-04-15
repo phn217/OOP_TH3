@@ -35,7 +35,7 @@ void main() {
             ds.TinhTongLuong(); 
             break;
         case 5: 
-            ds.SapXepTheoLuong(); 
+            ds.SapXepTheoLuongTangDan(); 
             break;
         default: 
             cout << "Ban chon sai. Vui long chon lai!\n";
