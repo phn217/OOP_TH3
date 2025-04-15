@@ -12,7 +12,6 @@ private:
     string ma, hoten, ngaysinh;
     int sosanpham;
     double dongia;
-    void ChuanHoaTen();
 public:
     NhanVienSX();
     NhanVienSX(string, string, string, int, double);
@@ -28,6 +27,7 @@ public:
     void SetNgaySinh(string);
     void SetSoSP(int);
     void SetDonGia(double);
+    void ChuanHoaTen();
     void Nhap();
     void Xuat() const;
 };
