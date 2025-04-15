@@ -1,6 +1,7 @@
 #include "DSNhanVien.h"
 
-void DSNhanVien::NhapDanhSach(int n) {
+void DSNhanVien::NhapDanhSach(int n) 
+{
     for (int i = 0; i < n; i++) 
     {
         cout << "\nNhap nhan vien thu " << i + 1 << ":\n";
@@ -9,16 +10,16 @@ void DSNhanVien::NhapDanhSach(int n) {
         danhsach.push_back(nv);
     }
 }
-
-void DSNhanVien::XuatDanhSach() const {
+void DSNhanVien::XuatDanhSach() const 
+{
     cout << "\n========== DANH SACH NHAN VIEN ==========\n";
     cout << fixed << setprecision(0);
     for (const auto& nv : danhsach) {
         nv.Xuat();
     }
 }
-
-void DSNhanVien::TimLuongCaoNhat() const {
+void DSNhanVien::TimLuongCaoNhat() const 
+{
     double maxLuong = danhsach[0].GetLuong();
     for (const auto& nv : danhsach) {
         if (nv.GetLuong() > maxLuong)
@@ -31,8 +32,8 @@ void DSNhanVien::TimLuongCaoNhat() const {
             nv.Xuat();
     }
 }
-
-void DSNhanVien::TimTuoiCaoNhat() const {
+void DSNhanVien::TimTuoiCaoNhat() const 
+{
     int maxTuoi = danhsach[0].GetTuoi();
     for (const auto& nv : danhsach) {
         if (nv.GetTuoi() > maxTuoi)
@@ -44,8 +45,8 @@ void DSNhanVien::TimTuoiCaoNhat() const {
             nv.Xuat();
     }
 }
-
-void DSNhanVien::TinhTongLuong() const {
+void DSNhanVien::TinhTongLuong() const 
+{
     float tong = 0;
     for (const auto& nv : danhsach) {
         tong += nv.GetLuong();
@@ -53,8 +54,8 @@ void DSNhanVien::TinhTongLuong() const {
     cout << fixed << setprecision(0);
     cout << "\nTong luong phai tra: " << tong << " vnd\n";
 }
-
-void DSNhanVien::SapXepTheoLuong() {
+void DSNhanVien::SapXepTheoLuongTangDan() 
+{
     sort(danhsach.begin(), danhsach.end(), [](const NhanVienVP& a, const NhanVienVP& b) {
         return a.GetLuong() < b.GetLuong();
         });
