@@ -48,7 +48,7 @@ void DSNhanVienSX::TimTuoiCaoNhat() const
         if (nv.GetTuoi() == maxTuoi)
             nv.Xuat();
 }
-void DSNhanVienSX::SapXepTheoLuong() 
+void DSNhanVienSX::SapXepTheoLuongTangDan() 
 {
     sort(ds.begin(), ds.end(), [](const NhanVienSX& a, const NhanVienSX& b) {
         return a.TinhLuong() < b.TinhLuong();
