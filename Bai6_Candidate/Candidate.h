@@ -28,7 +28,6 @@ public:
     void Nhap();
     void Xuat() const;
     float TongDiem() const;
-    string GetTen() const;
 };
 
 
