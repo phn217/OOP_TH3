@@ -1,18 +1,5 @@
 #include "NhanVienSX.h"
 
-void NhanVienSX::ChuanHoaTen() {
-    bool viethoa = true;
-    for (char& x : hoten) {
-        if (viethoa && isalpha(x)) {
-            x = toupper(x);
-            viethoa = false;
-        }
-        else {
-            x = tolower(x);
-        }
-        if (x == ' ') viethoa = true;
-    }
-}
 NhanVienSX::NhanVienSX() 
 {
     ma = "";
@@ -29,6 +16,7 @@ NhanVienSX::NhanVienSX(string m, string ht, string ns, int sp, double dg)
     sosanpham = sp;
     dongia = dg;
 }
+NhanVienSX::~NhanVienSX() {}
 string NhanVienSX::GetMa() const 
 { 
     return ma; 
@@ -77,6 +65,20 @@ void NhanVienSX::SetSoSP(int sp)
 void NhanVienSX::SetDonGia(double dg) 
 { 
     dongia = dg; 
+}
+void NhanVienSX::ChuanHoaTen() 
+{
+    bool viethoa = true;
+    for (char& x : hoten) {
+        if (viethoa && isalpha(x)) {
+            x = toupper(x);
+            viethoa = false;
+        }
+        else {
+            x = tolower(x);
+        }
+        if (x == ' ') viethoa = true;
+    }
 }
 void NhanVienSX::Nhap() 
 {
