@@ -1,16 +1,19 @@
 #include "DaThuc.h"
 
-DaThuc::DaThuc() {
+DaThuc::DaThuc() 
+{
     bac = 0;
     for (int i = 0; i < 100; ++i)
         heso[i] = 0;
 }
-DaThuc::DaThuc(int b) {
+DaThuc::DaThuc(int b) 
+{
     bac = b;
     for (int i = 0; i < 100; ++i)
         heso[i] = 0;
 }
-void DaThuc::Nhap() {
+void DaThuc::Nhap() 
+{
     cout << "Nhap bac cua da thuc: ";
     cin >> bac;
     while (bac < 0 || bac >= 100) {
@@ -22,7 +25,8 @@ void DaThuc::Nhap() {
         cin >> heso[i];
     }
 }
-void DaThuc::Xuat() {
+void DaThuc::Xuat() 
+{
     bool isEmpty = true;
     for (int i = 0; i <= bac; ++i) {
         double h = heso[i];
@@ -44,13 +48,15 @@ void DaThuc::Xuat() {
     if (isEmpty) cout << "0"; 
     cout << endl;
 }
-double DaThuc::TinhGiaTri(double x) {
+double DaThuc::TinhGiaTri(double x) 
+{
     double kq = 0;
     for (int i = 0; i <= bac; ++i)
         kq += heso[i] * pow(x, bac - i);
     return kq;
 }
-DaThuc DaThuc::Cong(const DaThuc& B) {
+DaThuc DaThuc::Cong(const DaThuc& B) 
+{
     int maxBac = max(bac, B.bac);
     DaThuc kq(maxBac);
     int deltaA = maxBac - bac;
@@ -67,7 +73,8 @@ DaThuc DaThuc::Cong(const DaThuc& B) {
     }
     return kq;
 }
-DaThuc DaThuc::Tru(const DaThuc& B) {
+DaThuc DaThuc::Tru(const DaThuc& B) 
+{
     int maxBac = max(bac, B.bac);
     DaThuc kq(maxBac);
     int deltaA = maxBac - bac;
